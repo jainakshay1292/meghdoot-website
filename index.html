@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghdoot — Raymond Authorised Stockist, Deoghar</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',sans-serif;color:#1e293b;background:#fff;}
+  a{text-decoration:none;color:inherit;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e2e8f0;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:60px;}
+  .logo{font-size:22px;font-weight:700;color:#1e3a5f;letter-spacing:2px;}
+  .logo span{font-size:11px;display:block;font-weight:400;color:#64748b;letter-spacing:1px;margin-top:-2px;}
+  .nav-links{display:flex;gap:28px;font-size:14px;color:#475569;}
+  .nav-links a:hover{color:#1e3a5f;}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);color:#fff;padding:80px 24px 70px;text-align:center;}
+  .hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:6px 16px;font-size:12px;letter-spacing:1px;margin-bottom:20px;}
+  .hero h1{font-size:52px;font-weight:800;letter-spacing:6px;margin-bottom:8px;}
+  .hero p{font-size:16px;opacity:0.85;margin-bottom:6px;}
+  .hero-addr{font-size:13px;opacity:0.65;margin-bottom:32px;}
+  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{background:#fff;color:#1e3a5f;padding:13px 28px;border-radius:8px;font-weight:700;font-size:14px;}
+  .btn-secondary{background:transparent;color:#fff;padding:13px 28px;border-radius:8px;font-weight:700;font-size:14px;border:2px solid rgba(255,255,255,0.5);}
+  .btn-primary:hover{background:#f1f5f9;}
+  .btn-secondary:hover{background:rgba(255,255,255,0.1);}
+
+  /* STATS */
+  .stats{background:#f8fafc;padding:40px 24px;display:flex;justify-content:center;gap:0;flex-wrap:wrap;}
+  .stat{text-align:center;padding:16px 40px;border-right:1px solid #e2e8f0;}
+  .stat:last-child{border-right:none;}
+  .stat-num{font-size:32px;font-weight:800;color:#1e3a5f;}
+  .stat-lbl{font-size:12px;color:#64748b;margin-top:2px;}
+
+  /* SECTION */
+  section{padding:64px 24px;max-width:960px;margin:0 auto;}
+  .sec-tag{font-size:12px;font-weight:700;color:#2563eb;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+  .sec-title{font-size:28px;font-weight:700;color:#1e3a5f;margin-bottom:12px;}
+  .sec-sub{font-size:15px;color:#64748b;line-height:1.7;max-width:600px;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;align-items:center;}
+  .about-text p{font-size:15px;color:#475569;line-height:1.8;margin-bottom:16px;}
+  .about-img{background:linear-gradient(135deg,#1e3a5f,#2563eb);border-radius:16px;height:280px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;}
+  .about-img div{font-size:48px;letter-spacing:4px;font-weight:800;}
+  .about-img p{font-size:12px;opacity:0.7;margin-top:8px;}
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+  .feature{display:flex;align-items:flex-start;gap:10px;padding:14px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;}
+  .feature-icon{width:32px;height:32px;background:#dbeafe;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+  .feature-text{font-size:13px;color:#475569;font-weight:500;}
+
+  /* PRODUCTS */
+  .products-sec{background:#f8fafc;padding:64px 24px;}
+  .products-inner{max-width:960px;margin:0 auto;}
+  .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:40px;}
+  .prod-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px 16px;text-align:center;transition:border-color 0.2s;}
+  .prod-card:hover{border-color:#2563eb;}
+  .prod-icon{font-size:32px;margin-bottom:12px;}
+  .prod-name{font-size:14px;font-weight:600;color:#1e3a5f;}
+  .prod-tag{font-size:11px;color:#64748b;margin-top:4px;}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px;}
+  .contact-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:24px;}
+  .contact-card h3{font-size:15px;font-weight:700;color:#1e3a5f;margin-bottom:16px;}
+  .contact-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+  .contact-icon{width:36px;height:36px;background:#dbeafe;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+  .contact-info{font-size:13px;color:#475569;line-height:1.6;}
+  .contact-info strong{color:#1e3a5f;display:block;font-size:12px;margin-bottom:2px;}
+  .map-placeholder{background:linear-gradient(135deg,#dbeafe,#eff6ff);border-radius:12px;height:200px;display:flex;align-items:center;justify-content:center;border:1px solid #bfdbfe;margin-top:16px;}
+  .map-placeholder p{color:#2563eb;font-size:14px;font-weight:600;}
+  .wa-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#25d366;color:#fff;padding:14px 24px;border-radius:10px;font-weight:700;font-size:15px;margin-top:20px;width:100%;}
+  .wa-btn:hover{background:#22c55e;}
+
+  /* FOOTER */
+  footer{background:#1e3a5f;color:#fff;text-align:center;padding:32px 24px;}
+  footer p{font-size:13px;opacity:0.6;margin-top:8px;}
+
+  @media(max-width:640px){
+    .hero h1{font-size:36px;}
+    .about-grid,.contact-grid{grid-template-columns:1fr;}
+    .stat{padding:16px 24px;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">MEGHDOOT<span>Raymond Authorised Stockist</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Raymond Mills Authorised Stockist — Since Decades</div>
+  <h1>MEGHDOOT</h1>
+  <p>Mills Authorised Stockists of Raymond Suitings</p>
+  <div class="hero-addr">Bara Bazar, B.Deoghar, Jharkhand — 814112</div>
+  <div class="hero-btns">
+    <a href="https://wa.me/917795977420" class="btn-primary">Chat on WhatsApp</a>
+    <a href="#products" class="btn-secondary">View Products</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">Raymond</div><div class="stat-lbl">Authorised Stockist</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Fabric Categories</div></div>
+  <div class="stat"><div class="stat-num">Deoghar</div><div class="stat-lbl">Jharkhand</div></div>
+  <div class="stat"><div class="stat-num">GST</div><div class="stat-lbl">Registered Business</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-tag">About Us</div>
+  <div class="sec-title">Deoghar's Trusted Fabric Store</div>
+  <div class="sec-sub">Your one-stop destination for premium quality fabrics and textiles in Deoghar.</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Meghdoot is a trusted name in Deoghar for premium quality fabrics. As an authorised stockist of Raymond Suitings, we bring you the finest fabric collections directly from the mills.</p>
+      <p>From traditional Dhotis and Sarees to premium Suitings and Shirtings, we offer a wide range of fabrics for all occasions. Our GST-registered business ensures transparent and reliable transactions.</p>
+      <div class="features">
+        <div class="feature"><div class="feature-icon">✓</div><div class="feature-text">Raymond Authorised</div></div>
+        <div class="feature"><div class="feature-icon">✓</div><div class="feature-text">GST Registered</div></div>
+        <div class="feature"><div class="feature-icon">✓</div><div class="feature-text">Premium Quality</div></div>
+        <div class="feature"><div class="feature-icon">✓</div><div class="feature-text">Best Prices</div></div>
+      </div>
+    </div>
+    <div class="about-img">
+      <div>
+        <div>MEGHDOOT</div>
+        <p>Est. Deoghar, Jharkhand</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<div class="products-sec" id="products">
+  <div class="products-inner">
+    <div class="sec-tag">Our Collection</div>
+    <div class="sec-title">Premium Fabric Categories</div>
+    <div class="sec-sub">We stock a wide range of high-quality fabrics to meet all your needs.</div>
+    <div class="products-grid">
+      <div class="prod-card"><div class="prod-icon">👔</div><div class="prod-name">Shirting</div><div class="prod-tag">Raymond & More</div></div>
+      <div class="prod-card"><div class="prod-icon">🧥</div><div class="prod-name">Suiting</div><div class="prod-tag">Premium Blends</div></div>
+      <div class="prod-card"><div class="prod-icon">🥻</div><div class="prod-name">Saree</div><div class="prod-tag">Traditional</div></div>
+      <div class="prod-card"><div class="prod-icon">🧣</div><div class="prod-name">Shawl</div><div class="prod-tag">Winter Collection</div></div>
+      <div class="prod-card"><div class="prod-icon">🧶</div><div class="prod-name">Poplin</div><div class="prod-tag">Cotton Fabric</div></div>
+      <div class="prod-card"><div class="prod-icon">👘</div><div class="prod-name">Dhoti</div><div class="prod-tag">Traditional Wear</div></div>
+      <div class="prod-card"><div class="prod-icon">🧦</div><div class="prod-name">Rubia</div><div class="prod-tag">Fine Fabric</div></div>
+      <div class="prod-card"><div class="prod-icon">🛏️</div><div class="prod-name">Blankets</div><div class="prod-tag">Winter Essentials</div></div>
+      <div class="prod-card"><div class="prod-icon">👗</div><div class="prod-name">Salwar Suit</div><div class="prod-tag">Ladies Collection</div></div>
+      <div class="prod-card"><div class="prod-icon">👕</div><div class="prod-name">Baba Suit</div><div class="prod-tag">Kids Wear</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-tag">Get In Touch</div>
+  <div class="sec-title">Visit Us or Call</div>
+  <div class="sec-sub">We'd love to help you find the perfect fabric. Come visit our store or reach out on WhatsApp.</div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Contact Information</h3>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div class="contact-info"><strong>Address</strong>Bara Bazar, B.Deoghar<br>Jharkhand — 814112</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info"><strong>Phone</strong><a href="tel:+917795977420">+91 77959 77420</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-info"><strong>Hours</strong>Mon–Sat: 10am – 8pm</div>
+      </div>
+      <a href="https://wa.me/917795977420?text=Hello%20Meghdoot%2C%20I%20want%20to%20enquire%20about%20fabrics" class="wa-btn">
+        💬 WhatsApp Us
+      </a>
+    </div>
+    <div>
+      <div class="contact-card">
+        <h3>Find Us on Map</h3>
+        <div class="map-placeholder">
+          <p>📍 Bara Bazar, Deoghar</p>
+        </div>
+        <a href="https://maps.google.com/?q=Bara+Bazar+Deoghar+Jharkhand" target="_blank" style="display:block;text-align:center;margin-top:12px;font-size:13px;color:#2563eb;font-weight:600;">
+          Open in Google Maps →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-size:20px;font-weight:800;letter-spacing:3px;">MEGHDOOT</div>
+  <p>Mills Authorised Stockists of Raymond Suitings · Bara Bazar, Deoghar, Jharkhand</p>
+  <p style="margin-top:8px;">+91 77959 77420</p>
+  <p>© 2026 Meghdoot. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
